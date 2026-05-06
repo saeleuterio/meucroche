@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ateliê Meu Crochê — Peças artesanais de crochê feitas à mão com amor e qualidade." />
+
+  <title>Meu Croche Ateliê — Crochê Artesanal</title>
+
+  <!-- Ícone da aba (favicon) -->
+  <link rel="icon" href="img/hero-banner.svg" type="image/svg+xml" />
+
+  <!-- Folha de estilos principal -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER — Navegação fixa no topo
+       ============================================================ -->
+  <header id="header">
+    <nav class="container">
+
+      <!-- Logo -->
+      <a href="#hero" class="logo">Ateliê <span>Meu Croche</span></a>
+
+      <!-- Menu desktop -->
+      <ul class="nav-links">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <!-- Ações do menu -->
+      <div class="nav-cta">
+
+        <!-- Botão Encomendar -->
+        <a href="#contato" class="btn btn-primary" style="padding:10px 22px; font-size:0.8rem;">
+          Encomendar
+        </a>
+
+        <!-- Hamburguer (mobile) -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Menu mobile (oculto por padrão) -->
+    <nav class="nav-mobile container" id="navMobile">
+      <a href="#hero">Início</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       HERO — Seção principal
+       ============================================================ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+
+    <div class="container">
+      <div class="hero-content">
+
+        <!-- Texto do hero -->
+        <div class="hero-text">
+
+          <div class="hero-tag fade-up">
+            🧶 Artesanato Feito com Amor
+          </div>
+
+          <h1 class="fade-up delay-1">
+            Crochê que <em>encanta</em><br>e aquece a alma
+          </h1>
+
+          <p class="fade-up delay-2">
+            Cada peça é feita à mão com fios selecionados, carinho e dedicação.
+            Do tapete elegante ao biquíni de praia — tudo personalizado para você.
+          </p>
+
+          <div class="hero-buttons fade-up delay-3">
+            <a href="#produtos" class="btn btn-primary">Ver Coleção</a>
+            <a href="#contato"  class="btn btn-outline">Fazer Encomenda</a>
+          </div>
+
+          <!-- Números / Estatísticas -->
+          <div class="hero-stats fade-up delay-4">
+            <div class="stat">
+              <strong>500+</strong>
+              <span>Peças Vendidas</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Feito à Mão</span>
+            </div>
+            <div class="stat">
+              <strong>4.9 ⭐</strong>
+              <span>Avaliação Média</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagem do hero -->
+        <div class="hero-visual fade-up delay-2">
+          <div class="hero-card">
+            <!--
+              TROQUE pelo caminho da sua foto:
+              <img src="img/hero-banner.svg" alt="Peças de crochê artesanal" />
+            -->
+            <img src="img/hero-banner.svg" alt="Peças de crochê artesanal" />
+          </div>
+
+          <div class="hero-badge">
+            <div class="badge-icon">✨</div>
+            <div>
+              <strong>Peça Exclusiva</strong>
+              <span>Personalizada para você</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIAS — Filtros de produto
+       ============================================================ -->
+  <section id="categorias">
+    <div class="container">
+
+      <div class="categorias-header reveal">
+        <span class="section-tag">Navegue por</span>
+        <h2 class="section-title">Nossas Categorias</h2>
+      </div>
+
+      <div class="categorias-grid reveal">
+
+        <div class="categoria-card active" onclick="filtrarProdutos('todos', this)">
+          <div class="cat-icon">🛍️</div>
+          <h3>Todos</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('tapetes', this)">
+          <div class="cat-icon">🪆</div>
+          <h3>Tapetes</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('croppeds', this)">
+          <div class="cat-icon">👗</div>
+          <h3>Croppeds</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('decoracao', this)">
+          <div class="cat-icon">🏠</div>
+          <h3>Decoração</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('apresentacao', this)">
+          <div class="cat-icon">🎁</div>
+          <h3>Apresentação</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('amigurumi', this)">
+          <div class="cat-icon">🐻</div>
+          <h3>Amigurumi</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('colares', this)">
+          <div class="cat-icon">📿</div>
+          <h3>Colares</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('ecopads', this)">
+          <div class="cat-icon">🌿</div>
+          <h3>Ecopads</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('pingentes', this)">
+          <div class="cat-icon">🔮</div>
+          <h3>Pingentes</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('sousplats', this)">
+          <div class="cat-icon">🍽️</div>
+          <h3>Sousplats</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('bolsas', this)">
+          <div class="cat-icon">👜</div>
+          <h3>Bolsas</h3>
+        </div>
+
+        <div class="categoria-card" onclick="filtrarProdutos('organizadores', this)">
+          <div class="cat-icon">🗂️</div>
+          <h3>Organizadores</h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PRODUTOS — Catálogo
+       ============================================================ -->
+  <section id="produtos">
+    <div class="container">
+
+      <div class="produtos-header reveal">
+        <div>
+          <span class="section-tag">Confira nosso</span>
+          <h2 class="section-title">Catálogo de Produtos</h2>
+        </div>
+        <a href="#produtos" class="btn btn-outline">Ver todos</a>
+      </div>
+
+      <div class="produtos-grid" id="produtosGrid">
+
+        <!-- ── Produto 1 — Tapetes ── -->
+        <div class="produto-card reveal" data-cat="tapetes">
+          <div class="produto-img">
+            <img src="img/produto-1.svg" alt="Tapete Redondo Hortência" />
+            <span class="produto-badge destaque">Destaque</span>
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Tapetes</p>
+            <h3 class="produto-nome">Tapete Redondo Hortência</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(28 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Tapete Redondo Hortência')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 2 — Croppeds ── -->
+        <div class="produto-card reveal" data-cat="croppeds">
+          <div class="produto-img">
+            <img src="img/produto-2.svg" alt="Top Cropped Margarida" />
+            <span class="produto-badge novo">Novo</span>
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Croppeds</p>
+            <h3 class="produto-nome">Top Cropped Margarida</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(47 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Top Cropped Margarida')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 3 — Decoração ── -->
+        <div class="produto-card reveal" data-cat="decoracao">
+          <div class="produto-img">
+            <img src="img/produto-3.svg" alt="Vaso Decorativo Crochê" />
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Decoração</p>
+            <h3 class="produto-nome">Vaso Decorativo Crochê</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★☆</span>
+              <span class="avaliacao-num">(19 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Vaso Decorativo Crochê')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 4 — Apresentação ── -->
+        <div class="produto-card reveal" data-cat="apresentacao">
+          <div class="produto-img">
+            <img src="img/produto-4.svg" alt="Kit Presente Crochê" />
+            <span class="produto-badge destaque">Destaque</span>
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Apresentação</p>
+            <h3 class="produto-nome">Kit Presente Crochê</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(35 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Kit Presente Crochê')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 5 — Amigurumi ── -->
+        <div class="produto-card reveal" data-cat="amigurumi">
+          <div class="produto-img">
+            <img src="img/produto-5.svg" alt="Urso Amigurumi" />
+            <span class="produto-badge novo">Novo</span>
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Amigurumi</p>
+            <h3 class="produto-nome">Urso Amigurumi</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(41 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Urso Amigurumi')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 6 — Colares ── -->
+        <div class="produto-card reveal" data-cat="colares">
+          <div class="produto-img">
+            <img src="img/produto-6.svg" alt="Colar Boho Crochê" />
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Colares</p>
+            <h3 class="produto-nome">Colar Boho Crochê</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(23 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Colar Boho Crochê')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 7 — Ecopads ── -->
+        <div class="produto-card reveal" data-cat="ecopads">
+          <div class="produto-img">
+            <img src="img/produto-7.svg" alt="Ecopads Demaquilantes" />
+            <span class="produto-badge novo">Novo</span>
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Ecopads</p>
+            <h3 class="produto-nome">Ecopads Demaquilantes</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(52 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Ecopads Demaquilantes')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 8 — Pingentes ── -->
+        <div class="produto-card reveal" data-cat="pingentes">
+          <div class="produto-img">
+            <img src="img/produto-8.svg" alt="Pingente Coração Crochê" />
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Pingentes</p>
+            <h3 class="produto-nome">Pingente Coração Crochê</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(38 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Pingente Coração Crochê')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 9 — Sousplats ── -->
+        <div class="produto-card reveal" data-cat="sousplats">
+          <div class="produto-img">
+            <img src="img/produto-1.svg" alt="Sousplat Natural Redondo" />
+            <span class="produto-badge destaque">Destaque</span>
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Sousplats</p>
+            <h3 class="produto-nome">Sousplat Natural Redondo</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(17 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Sousplat Natural Redondo')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 10 — Bolsas ── -->
+        <div class="produto-card reveal" data-cat="bolsas">
+          <div class="produto-img">
+            <img src="img/produto-2.svg" alt="Bolsa Tote Boho" />
+            <span class="produto-badge novo">Novo</span>
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Bolsas</p>
+            <h3 class="produto-nome">Bolsa Tote Boho</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★★</span>
+              <span class="avaliacao-num">(31 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Bolsa Tote Boho')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Produto 11 — Organizadores ── -->
+        <div class="produto-card reveal" data-cat="organizadores">
+          <div class="produto-img">
+            <img src="img/produto-3.svg" alt="Cesta Organizadora Crochê" />
+            <button class="btn-fav" title="Favoritar">🤍</button>
+          </div>
+          <div class="produto-info">
+            <p class="produto-categoria">Organizadores</p>
+            <h3 class="produto-nome">Cesta Organizadora Crochê</h3>
+            <div class="produto-avaliacao">
+              <span class="stars">★★★★☆</span>
+              <span class="avaliacao-num">(22 avaliações)</span>
+            </div>
+            <a href="#contato" class="btn-encomendar" onclick="selecionarProduto('Cesta Organizadora Crochê')">
+              📋 Encomendar esta Peça
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /produtos-grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BANNER — Promoção / CTA
+       ============================================================ -->
+  <section id="banner">
+    <div class="container">
+      <div class="banner-wrapper">
+        <div class="banner-inner">
+
+          <!-- Texto -->
+          <div class="banner-text reveal">
+            <span class="section-tag">Oferta Especial</span>
+            <h2 class="section-title">Peças Personalizadas<br>do seu Jeito!</h2>
+            <p class="section-desc">
+              Escolha a cor, o tamanho e o modelo. Cada peça é feita especialmente
+              para você com fios de alta qualidade. Frete grátis acima de R$ 200.
+            </p>
+            <a href="#contato" class="btn-banner">Fazer Encomenda →</a>
+          </div>
+
+          <!-- Imagem -->
+          <div class="banner-img">
+            <!--
+              TROQUE pelo caminho da sua foto:
+              <img src="img/banner-promo.svg" alt="Promoção especial crochê" />
+            -->
+            <img src="img/banner-promo.svg" alt="Promoção especial crochê" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       DEPOIMENTOS
+       ============================================================ -->
+  <section id="depoimentos">
+    <div class="container">
+
+      <div class="depoimentos-header reveal">
+        <span class="section-tag">O que dizem nossas clientes</span>
+        <h2 class="section-title">Depoimentos Reais</h2>
+      </div>
+
+      <div class="depoimentos-grid">
+
+        <!-- Depoimento 1 -->
+        <div class="depoimento-card reveal">
+          <div class="depoimento-stars">★★★★★</div>
+          <p class="depoimento-text">
+            "Comprei o tapete Hortência e ficou LINDO na minha sala! A qualidade é impecável
+            e chegou super bem embalado. Com certeza vou comprar mais peças!"
+          </p>
+          <div class="depoimento-autor">
+            <div class="autor-avatar">😊</div>
+            <div>
+              <p class="autor-nome">Ana Claudia S.</p>
+              <p class="autor-cidade">São Paulo, SP</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="depoimento-card reveal">
+          <div class="depoimento-stars">★★★★★</div>
+          <p class="depoimento-text">
+            "Encomendei um biquíni personalizado e superou todas as expectativas!
+            O acabamento é de dar inveja. Atendimento super atencioso do início ao fim."
+          </p>
+          <div class="depoimento-autor">
+            <div class="autor-avatar">😍</div>
+            <div>
+              <p class="autor-nome">Fernanda M.</p>
+              <p class="autor-cidade">Rio de Janeiro, RJ</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="depoimento-card reveal">
+          <div class="depoimento-stars">★★★★★</div>
+          <p class="depoimento-text">
+            "Presente perfeito! Comprei o amigurumi urso para o filho da minha amiga
+            e ela adorou. A peça é muito fofa e bem feita. Já indiquei para várias pessoas!"
+          </p>
+          <div class="depoimento-autor">
+            <div class="autor-avatar">🥰</div>
+            <div>
+              <p class="autor-nome">Juliana P.</p>
+              <p class="autor-cidade">Belo Horizonte, MG</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTATO / FORMULÁRIO DE ENCOMENDA
+       ============================================================ -->
+  <section id="contato">
+    <div class="container">
+      <div class="contato-grid">
+
+        <!-- Informações de contato -->
+        <div class="contato-info reveal">
+          <span class="section-tag">Fale Conosco</span>
+          <h2 class="section-title">Faça sua Encomenda</h2>
+          <p class="section-desc">
+            Cada peça é feita com carinho e dedicação. Entre em contato para encomendar
+            sua peça personalizada ou tirar dúvidas sobre nossos produtos.
+          </p>
+
+          <div class="contato-item">
+            <div class="contato-item-icon">📱</div>
+            <div class="contato-item-text">
+              <strong>WhatsApp</strong>
+              <span>(17) 99999-0000</span>
+            </div>
+          </div>
+
+          <div class="contato-item">
+            <div class="contato-item-icon">📧</div>
+            <div class="contato-item-text">
+              <strong>E-mail</strong>
+              <span>contato@gmail.com</span>
+            </div>
+          </div>
+
+          <div class="contato-item">
+            <div class="contato-item-icon">📍</div>
+            <div class="contato-item-text">
+              <strong>Localização</strong>
+              <span>Araçatuba, São Paulo – SP</span>
+            </div>
+          </div>
+
+          <div class="contato-item">
+            <div class="contato-item-icon">🕐</div>
+            <div class="contato-item-text">
+              <strong>Atendimento</strong>
+              <span>Seg. a Sex. das 9h às 18h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulário -->
+        <div class="contato-form reveal">
+          <h3>Envie sua mensagem</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" placeholder="Seu nome completo" />
+            </div>
+            <div class="form-group">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" placeholder="seu@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="produto">Produto de Interesse *</label>
+            <select id="produto">
+              <option value="">Selecione uma categoria...</option>
+              <option>Tapetes</option>
+              <option>Croppeds</option>
+              <option>Decoração</option>
+              <option>Apresentação</option>
+              <option>Amigurumi</option>
+              <option>Colares</option>
+              <option>Ecopads</option>
+              <option>Pingentes</option>
+              <option>Sousplats</option>
+              <option>Bolsas</option>
+              <option>Organizadores</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem *</label>
+            <textarea
+              id="mensagem"
+              placeholder="Descreva o que você deseja — cor, tamanho, modelo..."
+            ></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-form" id="btnEnviar">
+            Enviar Mensagem 🧶
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER — Rodapé
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Marca -->
+        <div class="footer-brand">
+          <div class="logo">Ateliê <span>Meu Croche</span></div>
+          <p>
+            Peças artesanais de crochê feitas com amor, carinho e fios de alta qualidade.
+            Cada encomenda é única e especial.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook">📘</a>
+            <a href="#" class="social-link" title="Instagram">📸</a>
+            <a href="#" class="social-link" title="TikTok">🎵</a>
+            <a href="#" class="social-link" title="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <!-- Produtos -->
+        <div class="footer-col">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="#">Tapetes</a></li>
+            <li><a href="#">Croppeds</a></li>
+            <li><a href="#">Decoração</a></li>
+            <li><a href="#">Amigurumi</a></li>
+            <li><a href="#">Colares</a></li>
+            <li><a href="#">Ecopads</a></li>
+            <li><a href="#">Pingentes</a></li>
+            <li><a href="#">Sousplats</a></li>
+            <li><a href="#">Bolsas</a></li>
+            <li><a href="#">Organizadores</a></li>
+          </ul>
+        </div>
+
+        <!-- Informações -->
+        <div class="footer-col">
+          <h4>Informações</h4>
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Como Encomendar</a></li>
+            <li><a href="#">Prazo de Entrega</a></li>
+            <li><a href="#">Trocas e Devoluções</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Pagamento -->
+        <div class="footer-col">
+          <h4>Pagamento</h4>
+          <ul>
+            <li><a href="#">💳 Cartão de Crédito</a></li>
+            <li><a href="#">📱 PIX (5% desconto)</a></li>
+            <li><a href="#">🎫 Boleto Bancário</a></li>
+            <li><a href="#">📦 Parcelamento</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Rodapé inferior -->
+      <div class="footer-bottom">
+        <p>© 2025 Meu Croche Ateliê. Todos os direitos reservados.</p>
+        <p>Feito com 🧶 em Araçatuba, SP</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       TOAST — Notificação flutuante
+       ============================================================ -->
+  <div class="toast" id="toast"></div>
+
+
+  <!-- ============================================================
+       JAVASCRIPT — carregado no final do body (boa prática!)
+       ============================================================ -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
