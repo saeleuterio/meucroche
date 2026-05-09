@@ -38,7 +38,7 @@
       <div class="nav-cta">
 
         <!-- Botão Encomendar -->
-        <a href="#contato" class="btn btn-primary" style="padding:10px 22px; font-size:0.8rem;">
+        <a href="#contato" class="btn btn-primary btn-nav-encomendar">
           Encomendar
         </a>
 
@@ -146,7 +146,8 @@
         <h2 class="section-title">Nossas Categorias</h2>
       </div>
 
-      <div class="categorias-grid reveal">
+      <div class="categorias-scroll-wrapper reveal">
+      <div class="categorias-grid">
 
         <div class="categoria-card active" onclick="filtrarProdutos('todos', this)">
           <div class="cat-icon">🛍️</div>
@@ -208,7 +209,8 @@
           <h3>Organizadores</h3>
         </div>
 
-      </div>
+      </div><!-- /categorias-grid -->
+      </div><!-- /categorias-scroll-wrapper -->
     </div>
   </section>
 
@@ -728,6 +730,14 @@
     </div>
   </footer>
 
+
+  <!-- ============================================================
+       BOTTOM NAV — Barra de ação fixa (só no mobile)
+       ============================================================ -->
+  <div class="bottom-nav">
+    <a href="#produtos" class="btn-bottom-outline">Ver Produtos</a>
+    <a href="#contato"  class="btn-bottom-primary">🧶 Encomendar</a>
+  </div>
 
   <!-- ============================================================
        TOAST — Notificação flutuante
