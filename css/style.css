@@ -775,6 +775,7 @@ nav {
   background: var(--cream);
   outline: none;
   transition: border-color .2s;
+  appearance: none;
   -webkit-appearance: none;
   min-height: 48px;
 }
