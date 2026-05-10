@@ -43,7 +43,6 @@ function selecionarProduto(nomeProduto) {
     'Tapete Redondo Hortência':  'Tapetes',
     'Top Cropped Margarida':     'Croppeds',
     'Vaso Decorativo Crochê':    'Decoração',
-    'Kit Presente Crochê':       'Apresentação',
     'Urso Amigurumi':            'Amigurumi',
     'Colar Boho Crochê':         'Colares',
     'Ecopads Demaquilantes':     'Ecopads',
