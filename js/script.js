@@ -47,7 +47,7 @@ function selecionarProduto(nomeProduto) {
     "Colar Boho Crochê": "Colares",
     "Ecopads Demaquilantes": "Ecopads",
     "Pingente Coração Crochê": "Pingentes",
-    "Sousplat Natural Redondo": "Sousplats",
+    "Sousplat Redondo": "Sousplats",
     "Bolsa Tote Boho": "Bolsas",
     "Cesta Organizadora Crochê": "Organizadores",
   };
@@ -105,21 +105,6 @@ function filtrarProdutos(categoria, elementoClicado) {
   });
 }
 
-/* ===================== 6. FAVORITOS ===================== */
-function iniciarFavoritos() {
-  document.querySelectorAll(".btn-fav").forEach((btn) => {
-    btn.addEventListener("click", function () {
-      if (this.textContent === "❤️") {
-        this.textContent = "🤍";
-        mostrarToast("💔 Produto removido dos favoritos.");
-      } else {
-        this.textContent = "❤️";
-        mostrarToast("❤️ Produto adicionado aos favoritos!");
-      }
-    });
-  });
-}
-
 /* ===================== 7. MENU MOBILE ===================== */
 function iniciarMenuMobile() {
   const hamburger = document.getElementById("hamburger");
@@ -156,32 +141,50 @@ function iniciarFormulario() {
   const btnEnviar = document.getElementById("btnEnviar");
   if (!btnEnviar) return;
 
+  // ⚠️ COLOQUE AQUI O SEU NÚMERO COM DDI + DDD (só números, sem espaços ou traços)
+  // Exemplo: 5517999990000  →  55 (Brasil) + 17 (DDD) + 999990000 (número)
+  const WHATSAPP_NUMERO = "5518988040182";
+
   btnEnviar.addEventListener("click", () => {
     const nome = document.getElementById("nome").value.trim();
+    const whatsapp = document.getElementById("whatsapp").value.trim();
     const email = document.getElementById("email").value.trim();
     const produto = document.getElementById("produto").value;
     const mensagem = document.getElementById("mensagem").value.trim();
 
-    if (!nome || !email || !produto || !mensagem) {
-      mostrarToast("⚠️ Por favor, preencha todos os campos obrigatórios.");
+    // Validação — nome, produto e mensagem são obrigatórios
+    if (!nome || !produto || !mensagem) {
+      mostrarToast("⚠️ Por favor, preencha nome, produto e mensagem.");
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      mostrarToast("⚠️ Digite um e-mail válido.");
-      return;
-    }
+    // Monta o texto que vai aparecer pronto no WhatsApp da cliente
+    var texto =
+      "👋 Olá! Gostaria de fazer uma encomenda:\n\n" +
+      "👤 *Nome:* " +
+      nome +
+      "\n" +
+      (whatsapp ? "📱 *WhatsApp:* " + whatsapp + "\n" : "") +
+      (email ? "📧 *E-mail:* " + email + "\n" : "") +
+      "🧶 *Produto:* " +
+      produto +
+      "\n\n" +
+      "📝 *Mensagem:*\n" +
+      mensagem;
 
-    mostrarToast(
-      "✅ Encomenda enviada! Entraremos em contato em breve, " + nome + "!",
-    );
+    // Abre o WhatsApp com a mensagem já preenchida
+    var link =
+      "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(texto);
+    window.open(link, "_blank");
 
+    // Limpa o formulário após abrir
     document.getElementById("nome").value = "";
     document.getElementById("email").value = "";
     document.getElementById("whatsapp").value = "";
     document.getElementById("produto").value = "";
     document.getElementById("mensagem").value = "";
+
+    mostrarToast("✅ Abrindo WhatsApp com sua mensagem!");
   });
 }
 
@@ -189,7 +192,6 @@ function iniciarFormulario() {
 document.addEventListener("DOMContentLoaded", () => {
   iniciarScrollReveal();
   iniciarHeaderScroll();
-  iniciarFavoritos();
   iniciarMenuMobile();
   iniciarFormulario();
 });
